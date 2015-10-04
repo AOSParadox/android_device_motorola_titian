@@ -10,6 +10,7 @@
 /dev/block/platform/msm_sdcc.1/by-name/persist      /persist     ext4    defaults                                                                       wait,check
 /dev/block/platform/msm_sdcc.1/by-name/boot         /boot        emmc    defaults                                                                       recoveryonly
 /dev/block/platform/msm_sdcc.1/by-name/recovery     /recovery    emmc    defaults                                                                       recoveryonly
+/dev/block/platform/msm_sdcc.1/by-name/frp          /frp         emmc    defaults                                                                       defaults
 
 # Sdcard
 /devices/msm_sdcc.2/mmc_host*                       auto         auto    defaults                                                                       voldmanaged=sdcard1:auto,noemulatedsd
