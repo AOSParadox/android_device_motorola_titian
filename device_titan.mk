@@ -55,6 +55,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.audio.monitorRotation=1
 
+# BoringSSL compat
+PRODUCT_PACKAGES += \
+    libboringssl-compat
+
 # Dalvik
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.heapstartsize=8m \
@@ -71,14 +75,14 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.frp.pst=/dev/block/platform/msm_sdcc.1/by-name/frp
 
 # GPS
-PRODUCT_COPY_FILES += \
-    device/motorola/titan/gps/etc/gps.conf:system/etc/gps.conf \
-    device/motorola/titan/gps/etc/flp.conf:system/etc/flp.conf \
-    device/motorola/titan/gps/etc/izat.conf:system/etc/izat.conf \
-    device/motorola/titan/gps/etc/sap.conf:system/etc/sap.conf \
-    device/motorola/titan/gps/etc/quipc.conf:system/etc/quipc.conf \
-    device/motorola/titan/gps/etc/xtra_root_cert.pem:system/etc/xtra_root_cert.pem \
-    device/motorola/titan/gps/etc/xtwifi.conf:system/etc/xtwifi.conf
+#PRODUCT_COPY_FILES += \
+#    device/motorola/titan/gps/etc/gps.conf:system/etc/gps.conf \
+#    device/motorola/titan/gps/etc/flp.conf:system/etc/flp.conf \
+#    device/motorola/titan/gps/etc/izat.conf:system/etc/izat.conf \
+#    device/motorola/titan/gps/etc/sap.conf:system/etc/sap.conf \
+#    device/motorola/titan/gps/etc/quipc.conf:system/etc/quipc.conf \
+#    device/motorola/titan/gps/etc/xtra_root_cert.pem:system/etc/xtra_root_cert.pem \
+#    device/motorola/titan/gps/etc/xtwifi.conf:system/etc/xtwifi.conf
 
 PRODUCT_PACKAGES += \
     gps.msm8226

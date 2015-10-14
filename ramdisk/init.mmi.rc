@@ -16,6 +16,9 @@ on early-init
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 1190400
 
 on init
+    # Preload the BoringSSL wrapper
+    export LD_PRELOAD "/system/lib/libboringssl-compat.so"
+
     copy /module_hashes /sys/kernel/module_whitelist
 
     # Configure coredump
@@ -324,6 +327,12 @@ service aplogd /system/bin/aplogd
     # to log plus those groups after preserving CAP_SYS_ADMIN, which is required
     # for kernel logging.
     disabled
+
+service mmi-radio-sh /system/bin/sh /init.mmi.radio.sh
+    class core
+    user root
+    group radio
+    oneshot
 
 on property:persist.sys.diag_mdlog.on=1
     start diag_mdlog

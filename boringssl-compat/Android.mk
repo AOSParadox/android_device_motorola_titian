@@ -1,5 +1,4 @@
-#
-# Copyright (C) 2015 The AOSParadox Project
+# Copyright (C) 2008 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,10 +11,21 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-#
 
+LOCAL_PATH:= $(call my-dir)
 
-LOC_PATH := $(call my-dir)
+include $(CLEAR_VARS)
 
-#include $(call first-makefiles-under,$(LOC_PATH))
+LOCAL_SRC_FILES := \
+    bio_b64.c \
+    p_dec.c \
+    p_enc.c \
+    p_open.c \
+    p_seal.c \
+    rsa_pss.c
+
+LOCAL_SHARED_LIBRARIES := liblog libcrypto
+LOCAL_MODULE := libboringssl-compat
+LOCAL_MODULE_TAGS := optional
+include $(BUILD_SHARED_LIBRARY)
 
