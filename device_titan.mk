@@ -119,3 +119,8 @@ PRODUCT_PACKAGES += \
     libqsap_sdk \
     libQWiFiSoftApCfg \
     wcnss_service
+    
+# Keylayouts
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/keylayouts/msm8226-tapan9302-snd-card_Button_Jack.kl:system/usr/keylayout/msm8226-tapan9302-snd-card_Button_Jack.kl
+
